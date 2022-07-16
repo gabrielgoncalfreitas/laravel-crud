@@ -1,7 +1,10 @@
 <?php
 
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\TuseController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+use PhpParser\Node\Expr\FuncCall;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +17,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/user/all', [UserController::class, 'all']);
-Route::get('/user/create', [UserController::class, 'create']);
+Route::get('/', function () {
+    return view('welcome');
+});
