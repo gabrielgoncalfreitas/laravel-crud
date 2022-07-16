@@ -1,10 +1,7 @@
 <?php
 
-use App\Http\Controllers\PostController;
-use App\Http\Controllers\TuseController;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
-use PhpParser\Node\Expr\FuncCall;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +14,9 @@ use PhpParser\Node\Expr\FuncCall;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+
+Route::get('/login', [UsersController::class, 'main']);
+
+Route::get('/register', function () {
+    return view('user.register');
 });
